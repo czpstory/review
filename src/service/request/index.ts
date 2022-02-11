@@ -54,7 +54,7 @@ class HYRequest {
       },
       (err) => {
         console.log('所有实例响应失败的拦截器')
-
+        this.loading?.close()
         return err
       }
     )

@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '@/views/login/login.vue'
+    redirect: '/login'
   },
   {
     path: '/login',

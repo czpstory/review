@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import 'normalize.css'
+import './assets/css/index.less'
 import 'element-plus/dist/index.css'
 import { globalRegister } from './global'
 

@@ -1,13 +1,17 @@
 <template>
   <div class="login">
-    <el-button>按钮</el-button>
+    <LoginPanel />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import LoginPanel from './cpns/login-panel.vue'
 
 export default defineComponent({
+  components: {
+    LoginPanel
+  },
   setup() {
     return {}
   }

@@ -26,7 +26,7 @@ class HYRequest {
     //所有实例的拦截器
     this.instance.interceptors.request.use(
       (config) => {
-        console.log('所有实例请求成功的拦截器')
+        // console.log('所有实例请求成功的拦截器')
         if (this.showLoading) {
           this.loading = ElLoading.service({
             lock: true,
@@ -37,23 +37,19 @@ class HYRequest {
         return config
       },
       (err) => {
-        console.log('所有实例请求失败的拦截器')
+        // console.log('所有实例请求失败的拦截器')
         return err
       }
     )
     this.instance.interceptors.response.use(
       (res) => {
-        console.log('所有实例响应成功的拦截器')
+        // console.log('所有实例响应成功的拦截器')
         this.loading?.close()
         const data = res.data
-        if (data.returnCode === '-1001') {
-          console.log('请求失败~, 错误信息')
-        } else {
-          return data
-        }
+        return data
       },
       (err) => {
-        console.log('所有实例响应失败的拦截器')
+        // console.log('所有实例响应失败的拦截器')
         this.loading?.close()
         return err
       }
@@ -70,7 +66,7 @@ class HYRequest {
           if (config.interceptors?.responseInterceptor) {
             config = config.interceptors.responseInterceptor(res)
           }
-          console.log(res)
+          // console.log(res)
           // 2.判断是否需要显示loading
           if (config.showLoading === false) {
             this.showLoading = config.showLoading
